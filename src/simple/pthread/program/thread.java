@@ -11,7 +11,7 @@ public class thread extends Thread {
     public thread(ArrayList<Integer> arr, String threadName) {
         this.arr = arr;
         this.threadName = threadName;
-        myUtil.printMessage("initializing thread " + threadName);
+        myUtil.printMessage("initializing thread " + threadName, "green");
     }
 
     public int getSum() {
@@ -21,11 +21,11 @@ public class thread extends Thread {
     @Override
     public void run() {
         try {
-            System.out.println("in thread");
+            myUtil.printMessage("\nstarting thread " + threadName);
             for (int i = 0; i < arr.size(); i++) {
                 sum += arr.get(i);
             }
-            System.out.println("sum from " + threadName + " = " + sum);
+            myUtil.printMessage("\nsum from " + threadName + " = " + sum);
         } catch (Exception e) {
             myUtil.printMessage(e.toString(), "red");
         }

@@ -28,7 +28,7 @@ public class SimplePthreadProgram {
             }
             System.out.println("1: Use 1 thead only");
             System.out.println("2: Use 2 Symmetric threads");
-            System.out.println("3: Use 2 Asymmetric threads");
+            System.out.println("3: Use 2 Aymmetric threads");
             System.out.println("4: Use 4 Symmetric threads");
             System.out.println("5: Use 4 Asymmetric threads");
             System.out.print("your answer: ");
@@ -59,7 +59,9 @@ public class SimplePthreadProgram {
                 break;
         }
         if (sum == -1) {
-            myUtil.printMessage("something went wrong!", "red");
+            myUtil.printMessage("\nsomething went wrong!", "red");
+        } else {
+            myUtil.printMessage("\nTotal : " + sum, "green");
         }
 
     }

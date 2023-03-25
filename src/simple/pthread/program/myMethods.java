@@ -12,6 +12,12 @@ public class myMethods {
         return sum;
     }
 
+    /**
+     * sums up the array using 2 symmetric arrays
+     *
+     * @param nums
+     * @return
+     */
     public static int method2(ArrayList<Integer> nums) {
         int sum = 0;
         System.out.println("arr = " + nums.toString());
@@ -23,25 +29,28 @@ public class myMethods {
         try {
             thread t1 = new thread(arr1, "t1");
             t1.start();
-            t1.join();
-            sum += t1.getSum();
 
             thread t2 = new thread(arr2, "t2");
             t2.start();
-            t2.join();
-            sum += t2.getSum();
 
+            boolean[] added = new boolean[]{false, false};
+            while (!added[0] && !added[1]) {
+                System.out.print("🤔");
+                if (!added[0] && !t1.isAlive()) {
+                    sum += t1.getSum();
+                    added[0] = true;
+                }
+                if (!added[1] && !t2.isAlive()) {
+                    sum += t2.getSum();
+                    added[1] = true;
+                }
+            }
             return sum;
         } catch (Exception e) {
             myUtil.printMessage(e.toString(), "red");
         }
 
         return -1; // if we get -1 as a sum, something must have gone wrong 
-    }
-
-    public static int method2Sum(int sum) {
-
-        return 0;
     }
 
     public static int method3(ArrayList<Integer> nums) {

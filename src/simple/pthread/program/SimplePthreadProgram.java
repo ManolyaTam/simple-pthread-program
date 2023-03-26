@@ -10,10 +10,9 @@ public class SimplePthreadProgram {
     private static ArrayList<Integer> generateArray() {
         ArrayList<Integer> arr = new ArrayList<Integer>();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 1000000; i++) {
             arr.add((int) Math.floor(Math.random() * 100));
         }
-
         return arr;
     }
 
@@ -63,7 +62,6 @@ public class SimplePthreadProgram {
         } else {
             myUtil.printMessage("\nTotal : " + sum, "green");
         }
-
     }
 
     public static void main(String[] args) {
@@ -76,15 +74,3 @@ public class SimplePthreadProgram {
         System.out.println("time it took = " + (stopTime - StartTime) + " nanoseconds");
     }
 }
-
-/*
-TODO:
-    + define array
-    + fill array with 1 million random numbers between 1-100
-    - calculate time...
-    - define a class with multiple functions: part1 ~ part 5
-    - define a thread to sum up the given numbers and return them...
-    Part 1 :
-        
-
- */

@@ -4,13 +4,13 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class SimplePthreadProgram {
-
-    private static ArrayList<Integer> nums;
-
+    public static int arraySize = 10;
+    public static ArrayList<Integer> nums;
+    
     private static ArrayList<Integer> generateArray() {
         ArrayList<Integer> arr = new ArrayList<Integer>();
 
-        for (int i = 0; i < 1000000; i++) {
+        for (int i = 0; i < arraySize; i++) {
             arr.add((int) Math.floor(Math.random() * 100));
         }
         return arr;
@@ -37,24 +37,24 @@ public class SimplePthreadProgram {
         return response;
     }
 
-    private static void useMethod(int method, ArrayList<Integer> nums) {
+    private static void useMethod(int method) {
         myUtil.printMessage("---------------------------------------", "green");
         int sum = -1;
         switch (method) {
             case 1:
-                sum = myMethods.method1(nums);
+                sum = myMethods.method1();
                 break;
             case 2:
-                sum = myMethods.method2(nums);
+                sum = myMethods.method2();
                 break;
             case 3:
-                sum = myMethods.method3(nums);
+                sum = myMethods.method3();
                 break;
             case 4:
-                sum = myMethods.method3(nums);
+                sum = myMethods.method4();
                 break;
             case 5:
-                sum = myMethods.method3(nums);
+//                sum = myMethods.method3();
                 break;
         }
         if (sum == -1) {
@@ -68,9 +68,9 @@ public class SimplePthreadProgram {
         nums = generateArray();
         int response = promptUser();
 
-        long StartTime = System.nanoTime();
-        useMethod(response, nums);
-        long stopTime = System.nanoTime();
-        System.out.println("time it took = " + (stopTime - StartTime) + " nanoseconds");
+//        long StartTime = System.nanoTime();
+        useMethod(response);
+//        long stopTime = System.nanoTime();
+//        System.out.println("time it took = " + (stopTime - StartTime) + " nanoseconds");
     }
 }

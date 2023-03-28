@@ -4,12 +4,14 @@ import java.util.ArrayList;
 
 public class thread extends Thread {
 
-    ArrayList<Integer> arr = new ArrayList<>();
     int sum = 0;
     String threadName;
+    int start; // index 
+    int end;
 
-    public thread(ArrayList<Integer> arr, String threadName) {
-        this.arr = arr;
+    public thread(int start, int end, String threadName) {
+        this.start = start;
+        this.end = end;
         this.threadName = threadName;
         myUtil.printMessage("initializing thread " + threadName, "green");
     }
@@ -22,8 +24,8 @@ public class thread extends Thread {
     public void run() {
         try {
             myUtil.printMessage("\nstarting thread " + threadName);
-            for (int i = 0; i < arr.size(); i++) {
-                sum += arr.get(i);
+            for (int i = start; i < end; i++) {
+                sum += SimplePthreadProgram.nums.get(i);
             }
             myUtil.printMessage("\nsum from " + threadName + " = " + sum);
         } catch (Exception e) {

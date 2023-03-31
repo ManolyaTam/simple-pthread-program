@@ -25,6 +25,7 @@ public class SimplePthreadProgram {
             } else {
                 myUtil.printMessage("please enter a number between 1 and 5", "red");
             }
+            System.out.println("0: Try all methods on same generated array");
             System.out.println("1: Use 1 thead only");
             System.out.println("2: Use 2 Symmetric threads");
             System.out.println("3: Use 2 Aymmetric threads");
@@ -42,16 +43,20 @@ public class SimplePthreadProgram {
         int sum = -1;
         switch (method) {
             case 0:
+                myUtil.printMessage("\t\t1) Using 1 thead only", "green");
                 sum = myMethods.method1();
-                System.out.print("1---------------------------");
+                
+                myUtil.printMessage("\t\t2) Using 2 Symmetric threads", "green");
                 sum = myMethods.method2();
-                System.out.print("2---------------------------");
+                
+                myUtil.printMessage("\t\t3) Using 2 Aymmetric threads", "green");
                 sum = myMethods.method3();
-                System.out.print("3---------------------------");
+                
+                myUtil.printMessage("\t\t4) Using 4 Symmetric threads", "green");
                 sum = myMethods.method4();
-                System.out.print("4---------------------------");
+                
+                myUtil.printMessage("\t\t5) Use 4 Asymmetric threads", "green");
                 sum = myMethods.method5();
-                System.out.print("5--------------------------");
                 break;
             case 1:
                 sum = myMethods.method1();
@@ -80,9 +85,6 @@ public class SimplePthreadProgram {
         nums = generateArray();
         int response = promptUser();
 
-//        long StartTime = System.nanoTime();
         useMethod(response);
-//        long stopTime = System.nanoTime();
-//        System.out.println("time it took = " + (stopTime - StartTime) + " nanoseconds");
     }
 }

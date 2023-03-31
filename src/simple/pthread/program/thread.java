@@ -27,7 +27,7 @@ public class thread extends Thread {
     @Override
     public void run() {
         try {
-            myUtil.printMessage("\nstarting thread " + threadName);
+//            myUtil.printMessage("\nstarting thread " + threadName);
             for (int i = start; i < end; i++) {
                 sum += SimplePthreadProgram.nums.get(i);
             }

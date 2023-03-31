@@ -25,7 +25,7 @@ public class myUtil {
                 System.out.println(GREEN + message + RESET);
                 break;
             default:
-                System.out.println(message);
+                System.out.println(message + RESET);
         }
     }
 }

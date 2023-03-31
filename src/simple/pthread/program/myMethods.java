@@ -24,7 +24,7 @@ public class myMethods {
         }
 
         long stopTime = System.nanoTime();
-        System.out.println("time it took = " + (stopTime - StartTime) + " nanoseconds");
+        myUtil.printMessage("time it took = " + (stopTime - StartTime) + " nanoseconds", "red");
         return sum;
     }
 
@@ -58,7 +58,7 @@ public class myMethods {
                 }
             }
             long stopTime = System.nanoTime();
-            System.out.println("time it took = " + (stopTime - StartTime) + " nanoseconds");
+            myUtil.printMessage("time it took = " + (stopTime - StartTime) + " nanoseconds", "red");
             return sum;
         } catch (Exception e) {
             myUtil.printMessage(e.toString(), "red");
@@ -91,7 +91,7 @@ public class myMethods {
                 }
             }
             long stopTime = System.nanoTime();
-            System.out.println("time it took = " + (stopTime - StartTime) + " nanoseconds");
+            myUtil.printMessage("time it took = " + (stopTime - StartTime) + " nanoseconds", "red");
             return sum;
         } catch (Exception e) {
             myUtil.printMessage(e.toString(), "red");
@@ -138,7 +138,7 @@ public class myMethods {
                 }
             }
             long stopTime = System.nanoTime();
-            System.out.println("time it took = " + (stopTime - StartTime) + " nanoseconds");
+            myUtil.printMessage("time it took = " + (stopTime - StartTime) + " nanoseconds", "red");
             return sum;
         } catch (Exception e) {
             myUtil.printMessage(e.toString(), "red");
@@ -190,7 +190,7 @@ public class myMethods {
                 }
             }
             long stopTime = System.nanoTime();
-            System.out.println("time it took = " + (stopTime - StartTime) + " nanoseconds");
+            myUtil.printMessage("time it took = " + (stopTime - StartTime) + " nanoseconds", "red");
             return sum;
         } catch (Exception e) {
             myUtil.printMessage(e.toString(), "red");

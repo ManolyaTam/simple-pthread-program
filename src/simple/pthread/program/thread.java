@@ -8,12 +8,16 @@ public class thread extends Thread {
     String threadName;
     int start; // index 
     int end;
+    int i1;
+    int i2;
+    int i3;
+    int i4;
 
     public thread(int start, int end, String threadName) {
         this.start = start;
         this.end = end;
         this.threadName = threadName;
-        myUtil.printMessage("initializing thread " + threadName, "green");
+//        myUtil.printMessage("initializing thread " + threadName, "green");
     }
 
     public int getSum() {
@@ -32,4 +36,5 @@ public class thread extends Thread {
             myUtil.printMessage(e.toString(), "red");
         }
     }
+
 }

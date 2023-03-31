@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class SimplePthreadProgram {
-    public static int arraySize = 10;
+    public static int arraySize = 1000000;
     public static ArrayList<Integer> nums;
     
     private static ArrayList<Integer> generateArray() {
@@ -33,7 +33,7 @@ public class SimplePthreadProgram {
             System.out.print("your answer: ");
             Scanner scanner = new Scanner(System.in);
             response = Integer.parseInt(scanner.nextLine());
-        } while (response < 1 || response > 5);
+        } while (response < 0 || response > 5);
         return response;
     }
 
@@ -41,6 +41,18 @@ public class SimplePthreadProgram {
         myUtil.printMessage("---------------------------------------", "green");
         int sum = -1;
         switch (method) {
+            case 0:
+                sum = myMethods.method1();
+                System.out.print("1---------------------------");
+                sum = myMethods.method2();
+                System.out.print("2---------------------------");
+                sum = myMethods.method3();
+                System.out.print("3---------------------------");
+                sum = myMethods.method4();
+                System.out.print("4---------------------------");
+                sum = myMethods.method5();
+                System.out.print("5--------------------------");
+                break;
             case 1:
                 sum = myMethods.method1();
                 break;
@@ -54,7 +66,7 @@ public class SimplePthreadProgram {
                 sum = myMethods.method4();
                 break;
             case 5:
-//                sum = myMethods.method3();
+                sum = myMethods.method3();
                 break;
         }
         if (sum == -1) {
